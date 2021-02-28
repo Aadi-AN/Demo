@@ -1,0 +1,21 @@
+all: hello
+
+hello: main.o sum.o product.o
+	g++ main.o sum.o product.o -o hello
+
+
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+#main.o(target): main.cpp(Dependency)
+#g++ -c(compile) main.cpp
+
+sum.o: sum.cpp
+	g++ -c sum.cpp
+
+product.o: product.cpp
+	g++ -c procuct.cpp
+
+clean:
+	rm -rf *o hello
